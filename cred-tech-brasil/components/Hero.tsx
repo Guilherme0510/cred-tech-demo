@@ -49,7 +49,7 @@ export const Hero = () => {
         >
 
           <Image
-            src="/hero-cleaning.jpg"
+            src="https://credtechsolucoes.com.br/hero-cleaning.jpg"
             alt="Profissional limpando documentos"
             className="mx-auto rounded-lg shadow-lg object-cover"
             width={800}

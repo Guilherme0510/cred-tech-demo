@@ -43,11 +43,17 @@ export const Navbar = () => {
       <header className="bg-white">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
           <a href="#" aria-label="Home">
-            <Image src="/logo.png" alt="Logo" width={100} height={50} />
+            <Image src="https://credtechsolucoes.com.br/logo.png" alt="Logo" width={100} height={50} />
           </a>
 
           <nav className="hidden md:flex space-x-8">
             <nav className="hidden md:flex space-x-8">
+              <button
+                onClick={() => scrollToId("hero")}
+                className="text-gray-700 hover:text-gray-900 transition cursor-pointer"
+              >
+                Inicio
+              </button>
               <button
                 onClick={() => scrollToId("sobre")}
                 className="text-gray-700 hover:text-gray-900 transition cursor-pointer"

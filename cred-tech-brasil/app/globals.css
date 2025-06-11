@@ -5,6 +5,21 @@
   --foreground: #171717;
 }
 
+@keyframes pulse-strong {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+.pulse-strong {
+  animation: pulse-strong 1.5s infinite ease-in-out
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

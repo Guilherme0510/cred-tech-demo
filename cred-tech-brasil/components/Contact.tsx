@@ -8,6 +8,8 @@ export const Contact = () => {
     nome: "",
     email: "",
     whatsapp: "",
+    assunto: "",
+    message: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -28,7 +30,13 @@ export const Contact = () => {
 
     if (res.ok) {
       alert("Mensagem enviada com sucesso!");
-      setFormData({ nome: "", email: "", whatsapp: "" });
+      setFormData({
+        nome: "",
+        email: "",
+        whatsapp: "",
+        assunto: "",
+        message: "",
+      });
     } else {
       alert("Erro ao enviar mensagem.");
     }
@@ -41,7 +49,8 @@ export const Contact = () => {
           <h2 className="text-3xl font-extrabold mb-8 text-gray-800 text-center md:text-left">
             Fale Conosco
           </h2>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6 ">
+            <div className="grid grid-cols-2 gap-6">
             {[
               {
                 id: "nome",
@@ -61,6 +70,12 @@ export const Contact = () => {
                 type: "tel",
                 placeholder: "+55 11 99999-9999",
                 pattern: "^\\+?\\d{7,15}$",
+              },
+              {
+                id: "assunto",
+                label: "Assunto",
+                type: "text",
+                placeholder: "Digite o assunto da mensagem",
               },
             ].map(({ id, label, type, placeholder, pattern }) => (
               <div key={id}>
@@ -87,7 +102,34 @@ export const Contact = () => {
                 hover:border-blue-500"
                 />
               </div>
+              
             ))}
+            </div>
+            <div>
+              <label
+                htmlFor="message"
+                className="block mb-2 text-sm font-semibold text-gray-700"
+              >
+                Mensagem
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={(e) =>
+                  setFormData({ ...formData, message: e.target.value })
+                }
+                required
+                placeholder="Escreva sua mensagem..."
+                rows={5}
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl
+      focus:outline-none focus:ring-4 focus:ring-blue-400
+      transition duration-300 ease-in-out
+      placeholder:text-gray-400
+      bg-gray-50
+      hover:border-blue-500"
+              />
+            </div>
 
             <button
               type="submit"
@@ -112,7 +154,7 @@ export const Contact = () => {
           </p>
           <div className="relative w-full h-full rounded-lg overflow-hidden">
             <Image
-              src="/contact-illustration.png"
+              src="https://credtechsolucoes.com.br/contact-illustration.png"
               alt="Contato"
               fill
               style={{ objectFit: "cover" }}

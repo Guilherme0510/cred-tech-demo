@@ -21,7 +21,7 @@ export const About = () => {
 
         <div className="md:w-1/2 relative w-full h-64 md:h-96">
           <Image
-            src="/about-img.jpg"
+            src="https://credtechsolucoes.com.br/about-img.jpg"
             alt="Imagem sobre nós"
             fill
             className="object-cover rounded-lg shadow-lg"
