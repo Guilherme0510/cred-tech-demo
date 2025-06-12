@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { BadgeCheck, CheckCircle, FileText } from "lucide-react";
+import { BadgeCheck, Barcode, CheckCircle, CreditCard, DollarSign, FileText } from "lucide-react";
 import React from "react";
 
 const items = [
@@ -36,24 +36,36 @@ export const Process = () => {
         </motion.h3>
         <div className="flex flex-col gap-8">
       {items.map((item, i) => {
-        const Icon = item.icon;
-        return (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.2, duration: 0.5 }}
-            viewport={{ once: true }}
-            className="bg-[#00C8C5] p-6 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105 flex items-center gap-6"
-          >
-            <Icon size={40} className="text-white flex-shrink-0" />
-            <div>
-              <h4 className="text-2xl font-bold text-white mb-5">{item.title}</h4>
-              <p className="text-white/90">{item.desc}</p>
-            </div>
-          </motion.div>
-        );
-      })}
+  const Icon = item.icon;
+  return (
+    <motion.div
+      key={i}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: i * 0.2, duration: 0.5 }}
+      viewport={{ once: true }}
+      className="bg-[#00C8C5] p-6 rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105 flex flex-col gap-6"
+    >
+      <div className="flex items-center gap-6">
+        <Icon size={40} className="text-white flex-shrink-0" />
+        <div>
+          <h4 className="text-2xl font-bold text-white mb-5">{item.title}</h4>
+          <p className="text-white/90">{item.desc}</p>
+        </div>
+      </div>
+
+      {/* Aqui só para o item "Orçamento & Contrato" */}
+      {item.title === "Orçamento & Contrato" && (
+        <div className="flex justify-center gap-10 mt-6">
+          <DollarSign size={32} className="text-[#FEB044]"  />
+          <CreditCard size={32} className="text-gray-500" />
+          <Barcode size={32} className="text-red-500"/>
+        </div>
+      )}
+    </motion.div>
+  );
+})}
+
     </div>
       </div>
     </section>

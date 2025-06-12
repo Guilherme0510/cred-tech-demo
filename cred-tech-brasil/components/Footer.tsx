@@ -21,11 +21,11 @@ export const Footer = () => {
               Precisa de Ajuda?
             </h3>
             <p className="text-sm text-gray-700 leading-relaxed">
-              Se você tiver qualquer dúvida, sugestão, dificuldade técnica ou
-              precisa de orientação sobre nossos serviços, não hesite em entrar
-              em contato com a nossa equipe de suporte. Estamos sempre prontos
-              para oferecer o melhor atendimento possível.
-            </p>
+  Se você tiver qualquer dúvida, sugestão, dificuldade técnica ou precisa de orientação sobre nossos serviços, não hesite em entrar em contato com a nossa equipe de suporte. Estamos sempre prontos para oferecer o melhor atendimento possível.  
+  <br /><br />
+  Aceitamos diversas formas de pagamento, incluindo boleto bancário, cartão de crédito e Pix — tudo para garantir praticidade, segurança e flexibilidade na sua contratação.
+</p>
+
             <p className="mt-3 text-sm text-gray-600 italic">
               Estamos aqui para ajudar!
             </p>
