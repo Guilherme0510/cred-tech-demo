@@ -2,80 +2,114 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  Handshake,
-  FileSearch,
-  Landmark,
-  BadgeDollarSign,
+  FolderSearch,
+  UserCheck,
+  Banknote,
+  TrendingUp,
+  ShieldCheck,
+  BadgeCheck,
 } from "lucide-react";
 
+const fadeInUp = {
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: "easeOut" },
+};
+
 export const Services = () => {
+  const ctaServicos = [
+    {
+      title: "Nome Limpo no Serasa e SPC",
+      icon: BadgeCheck,
+    },
+    {
+      title: "Regularização do seu nome",
+      icon: ShieldCheck,
+    },
+    {
+      title: "Aumento de Score",
+      icon: TrendingUp,
+    },
+  ];
+
   const services = [
     {
-      title: "Desalienação e Suspensão de Contratos",
-      desc: "Liberamos bens alienados por dívidas bancárias e suspendemos contratos financeiros, permitindo a exclusão da empresa e de seus sócios dos órgãos de restrição como SERASA, SPC e BACEN.",
-      icon: Handshake,
-    },
-    {
-      title: "Certidão Negativa Fiscal",
-      desc: "Regularizamos pendências com a Receita Federal, garantindo conformidade fiscal para empresas do Simples Nacional, Lucro Presumido e Lucro Real, promovendo segurança e estabilidade jurídica.",
-      icon: FileSearch,
-    },
-    {
-      title: "Precatórios como Solução Fiscal",
+      title: "Quitação de Dívidas com Precatórios",
       desc: "Acompanhamos todo o processo de compra e venda de precatórios. Empresas podem usá-los para quitar dívidas tributárias, reduzindo passivos com respaldo jurídico sólido.",
-      icon: Landmark,
+      icon: Banknote,
     },
     {
-      title: "Recuperação de Créditos Tributários",
-      desc: "Recuperamos valores pagos indevidamente em tributos como PIS, COFINS, folha de pagamento e multas federais. Otimize sua gestão fiscal e recupere recursos perdidos.",
-      icon: BadgeDollarSign,
+      title: "Limpa Nome",
+      desc: "Através da filiação a uma associação de defesa do consumidor e da participação em ações coletivas, pessoas físicas e empresas vinculadas à CNS conseguem a exclusão de registros negativos em órgãos como SERASA, SPC, Boa Vista, entre outros — com garantia contratual de conclusão em até 35 dias úteis ou reembolso total.",
+      icon: UserCheck,
+    },
+    {
+      title: "Histórico do Bacen",
+      desc: "Por meio de procedimento administrativo, eliminamos registros de dívidas vencidas ou em prejuízo no relatório SCR do Registrato (Sisbacen). Esse documento tem se tornado cada vez mais decisivo na concessão de crédito por instituições financeiras.",
+      icon: FolderSearch,
     },
   ];
 
   return (
-    <section id="services" className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-4 text-center">
-        <motion.h3
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-3xl font-semibold text-gray-800 mb-10"
-        >
-          Nossos Serviços
-        </motion.h3>
-
-        <div className="grid md:grid-cols-2 gap-8 text-left">
-          {services.map((item, i) => (
+    <section id="services" className="py-20 px-6 bg-gray-50">
+      {/* Bloco 1: CTA Serviços */}
+      <div className="max-w-6xl mx-auto mb-16">
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
+          Soluções Rápidas
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {ctaServicos.map((servico, index) => (
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.2, duration: 0.5 }}
+              key={index}
+              initial="initial"
+              whileInView="animate"
               viewport={{ once: true }}
-              className="bg-[#00C8C5] p-6 min-h-[200px] rounded-lg shadow-md hover:shadow-lg transition-transform transform hover:scale-105 flex items-center gap-6"
+              variants={fadeInUp}
+              className="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow hover:shadow-md transition"
             >
-              <item.icon className="w-12 h-12 text-white flex-shrink-0" />
-
-              <div>
-                <h4 className="text-2xl font-bold text-white mb-2">
-                  {item.title}
-                </h4>
-                <p className="text-white text-sm leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
+              <servico.icon className="w-12 h-12 text-blue-600 mb-4" />
+              <h3 className="text-lg font-semibold text-center text-gray-800">
+                {servico.title}
+              </h3>
             </motion.div>
           ))}
         </div>
-        <a
-          href="https://wa.me/5511952703236"
+      </div>
+
+      {/* Bloco 2: Serviços Detalhados */}
+      <div className="max-w-6xl mx-auto flex flex-col">
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
+          Serviços Especializados
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {services.map((servico, index) => (
+            <motion.div
+              key={index}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="bg-white p-6 rounded-xl shadow hover:shadow-md transition"
+            >
+              <servico.icon className="w-12 h-12 text-blue-600 mb-4" />
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                {servico.title}
+              </h3>
+              <p className="text-gray-600 text-sm">{servico.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+        <div className="mx-auto">
+          {" "}
+          <a
+            href="https://wa.me/5511952703236"
             target="_blank"
             rel="noopener noreferrer"
-          className="bg-[#FEB044] text-white z-50 font-semibold px-6 py-3 rounded-lg hover:bg-[#a08054] transition"
-        >
-          Fale Conosco
-        </a>
+            className="bg-[#FEB044] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#9b7c52] transition"
+          >
+            Fale Conosco
+          </a>
+        </div>
       </div>
     </section>
   );

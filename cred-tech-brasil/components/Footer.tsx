@@ -1,6 +1,14 @@
 import React from "react";
 import Link from "next/link";
-import { Clock, Locate, Mail, MapPlus, Navigation, Phone } from "lucide-react";
+import {
+  Clock,
+  Instagram,
+  Locate,
+  Mail,
+  MapPlus,
+  Navigation,
+  Phone,
+} from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -31,7 +39,7 @@ export const Footer = () => {
               <Locate />
               Atendimento Online
               <br />
-              São Paulo, SP
+              Brasil
             </p>
             <p className="mt-2 flex items-center gap-2">
               <Phone />
@@ -41,6 +49,12 @@ export const Footer = () => {
               <Mail />
               credtechbrasilacessoria@gmail.com
             </p>
+            <a href="https://www.instagram.com/assessoriacredtechbrasil/">
+              <p className="mt-2 flex items-center flex-row text-sm gap-2 text-blue-500">
+                <Instagram />
+                assessoriacredtechbrasil
+              </p>
+            </a>
           </div>
 
           <div>
@@ -75,8 +89,8 @@ export const Footer = () => {
 
         <div className="bg-gray-300 py-4 text-center text-sm text-gray-600">
           <p>
-            &copy; {new Date().getFullYear()} Cred Tech Brasil. Todos os direitos
-            reservados.
+            &copy; {new Date().getFullYear()} Cred Tech Brasil. Todos os
+            direitos reservados.
           </p>
         </div>
       </footer>
