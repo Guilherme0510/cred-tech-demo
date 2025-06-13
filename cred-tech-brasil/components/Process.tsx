@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import { BadgeCheck, Barcode, CheckCircle, CreditCard, DollarSign, FileText } from "lucide-react";
+import { BadgeCheck, CheckCircle, FileText } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 
 const items = [
@@ -54,13 +55,21 @@ export const Process = () => {
         </div>
       </div>
 
-      {/* Aqui só para o item "Orçamento & Contrato" */}
       {item.title === "Orçamento & Contrato" && (
-        <div className="flex justify-center gap-10 mt-6">
-          <DollarSign size={32} className="text-[#FEB044]"  />
-          <CreditCard size={32} className="text-gray-500" />
-          <Barcode size={32} className="text-red-500"/>
-        </div>
+        <div className="relative flex justify-center items-center mt-6 px-4">
+  {/* Fundo branco atrás da imagem */}
+  <div className="absolute bg-white w-full max-w-[500px] md:h-[80px] h-[50px] z-10 rounded-md shadow" />
+
+  {/* Imagem de formas de pagamento */}
+  <Image
+    src="/formas_pagamento.jpg"
+    alt="Formas de Pagamento"
+    width={500}
+    height={50}
+    className="relative z-20 w-full max-w-[500px] h-auto object-contain"
+  />
+</div>
+
       )}
     </motion.div>
   );

@@ -77,6 +77,16 @@ export const Hero = () => {
           </a>
         </motion.div>
       </div>
+      <section className="w-full bg-white">
+        <div className="max-w-7xl grid md:grid-cols-6 grid-cols-3 mx-auto p-10 gap-6">
+<Image src={'/spc-hero.png'} width={120} height={120} alt="Imagem das empresa" />
+<Image src={'/protestoSp-hero.png'} width={120} height={120} alt="Imagem das empresa" />
+<Image src={'/boaVista-hero.png'} width={120} height={120} alt="Imagem das empresa" />
+<Image src={'/serasa-hero.png'} width={120} height={120} alt="Imagem das empresa" />
+<Image src={'/protestoBr-hero.png'} width={120} height={120} alt="Imagem das empresa" />
+<Image src={'/quod-hero.png'} width={120} height={120} alt="Imagem das empresa" />
+</div>
+      </section>
     </section>
   );
 };
