@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { BadgeCheck, CheckCircle, FileText } from "lucide-react";
-import Image from "next/image";
+import { BadgeCheck, Barcode, CheckCircle, CreditCard, DollarSign, FileText } from "lucide-react";
 import React from "react";
 
 const items = [
@@ -14,6 +13,11 @@ const items = [
     title: "Orçamento & Contrato",
     desc: "Com base no diagnóstico, elaboramos um plano sob medida, com orçamento transparente e contrato objetivo. Você saberá exatamente o que será feito, prazos envolvidos e valores investidos — tudo com total clareza e segurança jurídica.",
     icon: FileText,
+  },
+  {
+    title: "Formas de Pagamento",
+    desc: "Oferecemos opções flexíveis de pagamento, como Pix, cartão de crédito e boleto bancário. Escolha a forma que melhor se adapta à sua realidade, com total segurança e praticidade.",
+    icon: DollarSign,
   },
   {
     title: "Entrega do Nome Limpo",
@@ -36,7 +40,7 @@ export const Process = () => {
           Como Funciona
         </motion.h3>
         <div className="flex flex-col gap-8">
-      {items.map((item, i) => {
+          {items.map((item, i) => {
   const Icon = item.icon;
   return (
     <motion.div
@@ -55,27 +59,28 @@ export const Process = () => {
         </div>
       </div>
 
-      {item.title === "Orçamento & Contrato" && (
-        <div className="relative flex justify-center items-center mt-6 px-4">
-  {/* Fundo branco atrás da imagem */}
-  <div className="absolute bg-white w-full max-w-[500px] md:h-[80px] h-[50px] z-10 rounded-md shadow" />
+{item.title === "Formas de Pagamento" && (
+  <div className="flex justify-center items-center gap-6 mt-6 flex-wrap">
+    <div className="flex items-center gap-2">
+      <DollarSign size={24} className="text-yellow-300" />
+      <span className="text-white/90 text-sm font-medium">Pix</span>
+    </div>
+    <div className="flex items-center gap-2">
+      <CreditCard size={24} className="text-indigo-300" />
+      <span className="text-white/90 text-sm font-medium">Cartão de Crédito</span>
+    </div>
+    <div className="flex items-center gap-2">
+      <Barcode size={24} className="text-red-300" />
+      <span className="text-white/90 text-sm font-medium">Boleto Bancário</span>
+    </div>
+  </div>
+)}
 
-  {/* Imagem de formas de pagamento */}
-  <Image
-    src="/formas_pagamento.jpg"
-    alt="Formas de Pagamento"
-    width={500}
-    height={50}
-    className="relative z-20 w-full max-w-[500px] h-auto object-contain"
-  />
-</div>
-
-      )}
     </motion.div>
   );
 })}
 
-    </div>
+        </div>
       </div>
     </section>
   );

@@ -40,7 +40,7 @@ export const Services = () => {
     },
     {
       title: "Limpa Nome",
-      desc: "Através da filiação a uma associação de defesa do consumidor e da participação em ações coletivas, pessoas físicas e empresas vinculadas à CNS conseguem a exclusão de registros negativos em órgãos como SERASA, SPC, Boa Vista, entre outros — com garantia contratual de conclusão em até 35 dias úteis ou reembolso total.",
+      desc: "Pessoas físicas e empresas vinculadas à Cred Tech têm a oportunidade de limpar seu nome por meio da filiação a uma associação de defesa do consumidor e participação em ações coletivas. Com respaldo jurídico, garantimos a exclusão de registros negativos em órgãos como SERASA, SPC e Boa Vista — tudo com garantia contratual de conclusão em até 35 dias úteis ou reembolso integral.",
       icon: UserCheck,
     },
     {
